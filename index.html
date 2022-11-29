@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -12,9 +12,14 @@
 
 
 <body>
-    <!===== scroll to top====-->
+    <!===== scroll to top button====-->
     <div class="scrollToTop-btn flex-center">
         <i class="fas fa-arrow-up"></i>
+    </div>
+    <!======lite/dark theme button====-->
+    <div class="theme-btn flex-center">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
     </div>
     <!======header====-->
     <header>
@@ -22,7 +27,8 @@
             <a href="#" class="logo">Mumtaz</a>
             <div class="navigation">
                 <div class="nav-items">
-                    <a href="#home">Home</a>
+                    <div class="nav-close-btn"></div>
+                    <a class="active" href="#home">Home</a>
                     <a href="#about">About</a>
                     <a href="#skills">Skills</a>
                     <a href="#services">Services</a>
@@ -31,9 +37,10 @@
                 </div>
 
             </div>
+            <div class="nav-menu-btn"></div>
         </div>
     </header>
-    <!====Home Sectiom=====-->
+    <!====Home Section=====-->
     <section class="home flex-center" id="home">
         <div class="home-container">
             <div class="media-icons">
@@ -47,7 +54,7 @@
                 <h3>Front-end Developer</h3>
                 <p>I create stunning websites for your business, Highly experienced in web design and development.</p>
 
-                <a href="" class="btn">Contact Me<i class="fas fa-arrow-circle-right"></i></a>
+                <a href="#contact" class="btn">Contact Me<i class="fas fa-arrow-circle-right"></i></a>
 
 
             </div>
@@ -461,19 +468,19 @@
                 </div>
                 <div class="contact-right">
                     <p>I'm always open to discussing product<br><span>design work or partnerships.</span></p>
-                    <form action="" class="contact-form">
+                    <form action="https://formsubmit.co/el/doyolo/m.mumtazcs@yahoo.com" method="POST" class="contact-form">
                         <div class="first-row">
-                            <input type="text" placeholder="Name">
+                            <input type="text" placeholder="Name" required>
                         </div>
                         <div class="second-row">
-                            <input type="email" placeholder="Email">
+                            <input type="email" placeholder="Email" required>
 
-                            <input type="text" placeholder="Subject">
+                            <input type="text" placeholder="Subject" required>
 
 
                         </div>
                         <div class="third-row">
-                            <textarea name="message" id="" rows="7" placeholder="message"></textarea>
+                            <textarea name="message" id="" rows="7" placeholder="message" required></textarea>
                         </div>
                         <button class="btn" type="submit">Send Message<i class="fas fa-paper-plane"></i></button>
                     </form>
@@ -519,7 +526,6 @@
         </div>
     </footer>
     <!====External section====--->
-    <script rc="js/swiper-bundle.min.js"></script>
     <script src="main1.js"></script>
 
 
