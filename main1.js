@@ -1,10 +1,6 @@
 //scroll up
 
-const scrollTopBtn = document.querySelector(".scrollToTop-btn");
-window.addEventListener("scroll", function() {
-    scrollTopBtn.classList.toggle("active", window.scrollY > 500);
 
-});
 //navigation bar effect on scrollBehavior: 
 window.addEventListener("scroll", function() {
     const header = this.document.querySelector("header");
@@ -30,17 +26,73 @@ modalCloseBtns.forEach((modalCloseBtn) => {
         });
     });
 });
-//resposive navigation menu toggle
-const menuBtn = document.querySelectorAll(".nav-menu-btn");
-const closeBtn = document.querySelectorAll(".nav-close-btn");
-const navigation = document.querySelectorAll(".navigation");
-const navItem = document.querySelectorAll(".nav-items a");
+//website dark /lite theme
+const themeBtn = document.querySelector(".theme-btn");
+
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+    themeBtn.classList.toggle("sun");
+
+    localStorage.setItem("saved-theme", getCurrentTheme());
+    localStorage.setItem("saved-icon", getCurrentIcon());
+
+});
+const getCurrentTheme = () => document.body.classList.contains("dark-theme") ? "dark" : "light";
+const getCurrentIcon = () => themeBtn.classList.contains("sun") ? "sun" : "moon";
+const savedTheme = localStorage.getItem("saved-theme");
+const savedIcon = localStorage.getItem("saved-icon");
+if (savedTheme) {
+    document.body.classList[savedTheme === "dark" ? "add" : "remove"]("dark-theme");
+    themeBtn.classList[savedIcon === "sun" ? "add" : "remove"]("sun");
+}
+//scroll to top button
+const scrollTopBtn = document.querySelector(".scrollToTop-btn");
+
+window.addEventListener("scroll", function() {
+    scrollTopBtn.classList.toggle("active", window.scrollY > 500);
+});
+scrollTopBtn.addEventListener("click", () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});
+//nav menu item active on page scrollBehavior: 
+window.addEventListener("scroll", () => {
+    const sections = document.querySelectorAll("section");
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(current => {
+        let sectionHeight = current.offsetHeight;
+        let sectionTop = current.offsetTop - 50;
+        let id = current.getAttribute("id");
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            document.querySelector(".nav-items a[href*=" + id + "]").classList.add("active");
+        } else {
+            document.querySelector(".nav-items a[href*=" + id + "]").classList.remove("active");
+        }
+
+    });
+});
+
+
+
+//responsive navigation menu toggle
+const menuBtn = document.querySelector(".nav-menu-btn");
+const closeBtn = document.querySelector(".nav-close-btn");
+const navigation = document.querySelector(".navigation");
+const navItems = document.querySelectorAll(".nav-items a");
+
 menuBtn.addEventListener("click", () => {
     navigation.classList.add("active");
 
 });
 closeBtn.addEventListener("click", () => {
-    navigation.classList.add("active");
+    navigation.classList.remove("active");
+});
+navItems.forEach((navItem) => {
+    navItem.addEventListener("click", () => {
+        navigation.classList.remove("active");
+    });
 });
 
 //portfolio section -model
