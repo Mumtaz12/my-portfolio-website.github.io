@@ -1081,7 +1081,7 @@ footer a {
     }
     .nav-close-btn {
         position: absolute;
-        background: url(../images/colse.png)no-repeat;
+        background: url(/images/colse.png)no-repeat;
         filter: var(--color-filter);
         background-size: 12px;
         background-position: center;
@@ -1097,7 +1097,7 @@ footer a {
         opacity: 1;
     }
     .nav-menu-btn {
-        background: url(../images/icons8-menu-50.png)no-repeat;
+        background: url(/images/icons8-menu-50.png)no-repeat;
         filter: var(--color-filter);
         background-size: 30px;
         background-position: center;
