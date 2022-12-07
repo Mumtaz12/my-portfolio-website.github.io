@@ -321,7 +321,7 @@ Header.sticky .nav-bar {
 .about-img {
     max-width: 100%;
     min-width: 500px;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .about-info .description {
@@ -1200,7 +1200,7 @@ footer a {
     }
     .home-container .home-img img {
         width: 65%;
-        transform: translateY(80px, -180px);
+        transform: translate(80px, -180px);
     }
     .home .home-container .info {
         font-size: 0.8rem;
