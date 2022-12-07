@@ -318,10 +318,10 @@ Header.sticky .nav-bar {
     width: 100%
 }
 
-.about-img {
+.about-img img{
     max-width: 100%;
     min-width: 500px;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .about-info .description {
